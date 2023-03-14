@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main>
+        <section>
+            <div class="um" id="um" data-cor=""></div>
+            <div class="um" id="dois" data-cor=""></div>
+            <div class="um" id="tres" data-cor=""></div>
+            <div class="dois" id="um" data-cor=""></div>
+            <div class="dois" id="dois" data-cor=""></div>
+            <div class="dois" id="tres" data-cor=""></div>
+            <div class="tres" id="um" data-cor=""></div>
+            <div class="tres" id="dois" data-cor=""></div>
+            <div class="tres" id="tres" data-cor=""></div>
+        </section>
+            <p> Quem joga é <span id="qjo">X</span></p>
+            <p><button onclick="trocar()">Trocar quem joga</button></p>
+            <p><button onclick="reset()">Reset</button></p>
+            <p id="vec"></p>
+    </main>
+</body>
+<script src="./index.js"></script>
+</html>

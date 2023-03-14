@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+main{
+    height: max-content;
+    width: max-content;
+    display: inline-block;
+    position: relative;
+    padding: 20px;
+    background-color: rgba(94, 133, 251, 0.823);
+    border-radius: 10px;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+}
+section{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: max-content;
+    height: max-content;
+    gap: 20px;
+}
+p{
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.738);
+    cursor: default;
+}
+button{
+    background-color: white;
+    font-family: monospace;
+    border: unset;
+    cursor: pointer;
+    transition: background-color 300ms;
+    width: max-content;
+    height: 30px;
+}
+button:hover{
+    background-color: rgb(212, 212, 212);
+}
+div{
+    display: inline-block;
+    background-color: white;
+    color: rgba(40, 36, 36, 0.856);
+    width: 125px;
+    height: 125px;
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    line-height: 125px;
+    font-size: 115px;
+    cursor: pointer;
+    border-radius: 2px;
+}
