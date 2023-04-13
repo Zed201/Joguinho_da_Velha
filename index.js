@@ -4,13 +4,15 @@ const p = document.getElementById("vec") //Parágrafo de falar que é vencedor
 const s = document.getElementById("qjo") //Parágrafo de "status"
 const xr = document.getElementById("resX")//Local do histórico onde fica o resultado do X
 const or = document.getElementById("resO")//Local do histórico onde fica o resultado do O
-var lS = localStorage.getItem("ResJogoDaVelha").split("|")//! O primeiro dos dadsos será a pontuação do X e o segundo a pontuação do O
+var loS = localStorage.getItem("ResJogoDaVelha")
+var lS = loS.split("|")//! O primeiro dos dadsos será a pontuação do X e o segundo a pontuação do O
 
 if (!localStorage.getItem("ResJogoDaVelha")) {
     rH()
 }
 function viewAtt() {// Basicamente atualiza a parte visual e a variavel com os valores do histórico
-    lS = localStorage.getItem("ResJogoDaVelha").split("|")
+    loS = localStorage.getItem("ResJogoDaVelha")
+    lS = loS.split("|")
     xr.innerText = String(lS[0])
     or.innerText = String(lS[1])
 }
