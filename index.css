@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+body{
+    background-color: rgba(27, 26, 26, 0.77);
+}
 main{
     height: max-content;
     width: max-content;
     display: inline-block;
     position: relative;
-    padding: 20px;
-    background-color: rgba(94, 133, 251, 0.823);
+    padding: 15px;
+    background-color: rgba(60, 74, 235, 0.823);
     border-radius: 10px;
     top: 50vh;
     left: 50vw;

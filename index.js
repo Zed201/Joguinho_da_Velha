@@ -2,6 +2,20 @@ var divis = Array.from(document.getElementsByTagName("div")) // Array que vai co
 var jog = true //Controle de quem vai jogar
 const p = document.getElementById("vec") //Parágrafo de falar que é vencedor
 const s = document.getElementById("qjo") //Parágrafo de "status"
+const xr = document.getElementById("resX")//Local do histórico onde fica o resultado do X
+const or = document.getElementById("resO")//Local do histórico onde fica o resultado do O
+var lS = localStorage.getItem("ResJogoDaVelha").split("|")//! O primeiro dos dadsos será a pontuação do X e o segundo a pontuação do O
+
+if (!localStorage.getItem("ResJogoDaVelha")) {
+    rH()
+}
+function viewAtt() {// Basicamente atualiza a parte visual e a variavel com os valores do histórico
+    lS = localStorage.getItem("ResJogoDaVelha").split("|")
+    xr.innerText = String(lS[0])
+    or.innerText = String(lS[1])
+}
+viewAtt()
+
 divis.map( // Adição da função a todas as divs
     (item) => {
         item.addEventListener("click", () => {
@@ -55,6 +69,7 @@ function Vencer() {// Verificação se venceu
         if (valor1 == valor2 && valor2 == valor3) {
             if (valor1 != "") {
                 p.innerText = `${valor1} venceu!`
+                resuStorage(valor1)
             }
         }
     }
@@ -78,17 +93,33 @@ function Vencer() {// Verificação se venceu
         if (valor1 == valor2 && valor2 == valor3 ) {
             if (valor1 != "") {
                 p.innerText = `${valor1} venceu!`
+                resuStorage(valor1)
             }
         }
     }// Vitória na digonal (class , id)1(um, um) = 5(dois, dois) = 9(tres, tres) /
     if (ExtTXT("um", "um") == ExtTXT("dois", "dois") && ExtTXT("dois", "dois") == ExtTXT("tres", "tres")){
         if (ExtTXT("um", "um") != "") {
             p.innerText = `${ExtTXT("um", "um")} venceu`
+            resuStorage(ExtTXT("um", "um"))
         }
     }//Vitória na diagonal inversa  3(um, tres) = 5(dois, dois) = 7(tres, um) \
     if (ExtTXT("um", "tres") == ExtTXT("dois", "dois") && ExtTXT("dois", "dois") == ExtTXT("tres", "um")){
         if (ExtTXT("um", "tres") != "") {
             p.innerText = `${ExtTXT("um", "tres")} venceu`
+            resuStorage(ExtTXT("um", "tres"))
         }
     }
+}
+// Parte responsável pelo histórico usando localStorage
+function rH() {
+    localStorage.setItem("ResJogoDaVelha", "0|0")
+    viewAtt()
+}
+function resuStorage(symb) {
+    if (symb == "X") {
+        localStorage.setItem("ResJogoDaVelha", `${Number(lS[0]) + 1}|${Number(lS[1])}`)
+    } else if (symb == "O") {
+        localStorage.setItem("ResJogoDaVelha", `${Number(lS[0])}|${Number(lS[1]) + 1}`)
+    }
+    viewAtt()
 }
