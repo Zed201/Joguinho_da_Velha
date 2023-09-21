@@ -72,6 +72,7 @@ function Vencer() {// Verificação se venceu
             if (valor1 != "") {
                 p.innerText = `${valor1} venceu!`
                 resuStorage(valor1)
+                reset()
             }
         }
     }
@@ -96,6 +97,7 @@ function Vencer() {// Verificação se venceu
             if (valor1 != "") {
                 p.innerText = `${valor1} venceu!`
                 resuStorage(valor1)
+                reset()
             }
         }
     }// Vitória na digonal (class , id)1(um, um) = 5(dois, dois) = 9(tres, tres) /
@@ -103,12 +105,14 @@ function Vencer() {// Verificação se venceu
         if (ExtTXT("um", "um") != "") {
             p.innerText = `${ExtTXT("um", "um")} venceu`
             resuStorage(ExtTXT("um", "um"))
+            reset()
         }
     }//Vitória na diagonal inversa  3(um, tres) = 5(dois, dois) = 7(tres, um) \
     if (ExtTXT("um", "tres") == ExtTXT("dois", "dois") && ExtTXT("dois", "dois") == ExtTXT("tres", "um")){
         if (ExtTXT("um", "tres") != "") {
             p.innerText = `${ExtTXT("um", "tres")} venceu`
             resuStorage(ExtTXT("um", "tres"))
+            reset()
         }
     }
 }

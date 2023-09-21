@@ -2,6 +2,9 @@
 body{
     background-color: rgba(27, 26, 26, 0.77);
 }
+::selection{
+    visibility: hidden;
+}
 main{
     height: max-content;
     width: max-content;
