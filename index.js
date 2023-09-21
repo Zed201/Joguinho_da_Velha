@@ -4,7 +4,7 @@ const p = document.getElementById("vec") //Parágrafo de falar que é vencedor
 const s = document.getElementById("qjo") //Parágrafo de "status"
 const xr = document.getElementById("resX")//Local do histórico onde fica o resultado do X
 const or = document.getElementById("resO")//Local do histórico onde fica o resultado do O
-var loS = String(localStorage.getItem("ResJogoDaVelha"))
+var loS = String(localStorage.getItem("ResJogoDaVelha").toString())
 var lS = loS.split("|")//! O primeiro dos dadsos será a pontuação do X e o segundo a pontuação do O
 
 if (!localStorage.getItem("ResJogoDaVelha")) {
